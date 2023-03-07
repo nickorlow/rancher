@@ -33,11 +33,11 @@ docker manifest annotate rancher/coreos-flannel:v0.10.0-rancher1 rancher/coreos-
 docker manifest annotate rancher/coreos-flannel:v0.10.0-rancher1 rancher/coreos-flannel:v0.10.0-arm64 --arch arm64
 docker manifest push -p rancher/coreos-flannel:v0.10.0-rancher1
 
-# k8s.gcr.io/defaultbackend-amd64:1.4
-docker pull k8s.gcr.io/defaultbackend-amd64:1.4
-docker tag k8s.gcr.io/defaultbackend-amd64:1.4 rancher/nginx-ingress-controller-defaultbackend:1.4-amd64
-docker pull k8s.gcr.io/defaultbackend-arm64:1.4
-docker tag k8s.gcr.io/defaultbackend-arm64:1.4 rancher/nginx-ingress-controller-defaultbackend:1.4-arm64
+# registry.k8s.io/defaultbackend-amd64:1.4
+docker pull registry.k8s.io/defaultbackend-amd64:1.4
+docker tag registry.k8s.io/defaultbackend-amd64:1.4 rancher/nginx-ingress-controller-defaultbackend:1.4-amd64
+docker pull registry.k8s.io/defaultbackend-arm64:1.4
+docker tag registry.k8s.io/defaultbackend-arm64:1.4 rancher/nginx-ingress-controller-defaultbackend:1.4-arm64
 docker push rancher/nginx-ingress-controller-defaultbackend:1.4-amd64
 docker push rancher/nginx-ingress-controller-defaultbackend:1.4-arm64
 docker manifest create rancher/nginx-ingress-controller-defaultbackend:1.4-rancher1 rancher/nginx-ingress-controller-defaultbackend:1.4-amd64 rancher/nginx-ingress-controller-defaultbackend:1.4-arm64
